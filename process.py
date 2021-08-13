@@ -9,4 +9,13 @@ def sales_reports(log_file): # creates a function called sales_reports using the
             print(line)
 
 
-sales_reports(log_file)
+# sales_reports(log_file)
+
+def melons(log_file):
+    for mel in log_file:
+        mel = mel.rstrip()
+        count = mel[0:3]
+        if count > 10:
+            print(mel)
+
+melons(log_file)
