@@ -41,6 +41,8 @@ where total < 5
 
 select sum(total) from invoice
 
+
+
 Select invoice, invoice_line.invoice_id, invoice.invoice_id 
 from invoice
 join invoice_line
@@ -59,3 +61,50 @@ select a.title, b.name from album a
 join artist b
 on b.artist_id = a.artist_id
 
+
+
+select name from artist
+order by name desc
+limit 10
+
+select name from artist
+where name like 'Black%'
+
+select name from artist
+where name like '%Black%'
+
+select max(birth_date) from employee
+
+select min(birth_date) from employee
+
+select count(*) from invoice
+where billing_state in ('CA','AZ','TX')
+
+select avg(total) from invoice
+
+Select t.track_id
+from playlist_track t
+join playlist p
+on t.playlist_id = p.playlist_id
+where name = 'Music'
+
+SELECT t.name
+FROM track t
+JOIN playlist_track p
+ON t.track_id = p.track_id
+WHERE p.playlist_id = 5;
+
+Select p.name, t.name
+from playlist p
+join playlist_track pt
+on p.playlist_id = pt.playlist_id
+join track t
+on pt.track_id = t.track_id
+
+select t.name, a.title
+from album a
+join track t
+on a.album_id = t.album_id
+join genre g 
+on t.genre_id = g.genre_id
+where g.name = 'Alternative & Punk'
